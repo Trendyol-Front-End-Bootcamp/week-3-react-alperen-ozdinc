@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getCharacterList } from "../services/api-service";
+import FilterSection from "../components/filters/FilterSection";
 import CharacterList from "../components/characters/CharacterList";
 
 const MAX_NUMBER_OF_CHARACTERS = 100;
@@ -8,30 +9,50 @@ const MAX_NUMBER_OF_CHARACTERS = 100;
 function Home() {
   const [characters, setCharacters] = useState([]);
   const [hasMore, setHasMore] = useState(true);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [genderFilter, setGenderFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+  
   const fetchData = () => {
-    if (characters.length >= MAX_NUMBER_OF_CHARACTERS) {
+    if (characters.length >= MAX_NUMBER_OF_CHARACTERS || !hasMore) {
       setHasMore(false);
       return;
     }
     setTimeout(() => {
-      getCharacterList().then((res) => {
+      getCharacterList({ currentPage, genderFilter, statusFilter }).then((res) => {
+        setCurrentPage((prevPage) => prevPage + 1);
         setCharacters((prevCharacters) => {
-          return [...prevCharacters, ...res];
+          return [...prevCharacters, ...res.results];
         });
+        if(!res.info.next){
+          setHasMore(false);
+        }
       });
     }, 500);
   };
 
+  const filterCharacters = () => {
+    setHasMore(true);
+    setCurrentPage(1);
+  };
+  
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (currentPage === 1) {
+      setCharacters([]);
+      fetchData();
+    }
+  }, [currentPage]);
 
   return (
     <div className="App">
       <h1 className="header-title">The Rick and Morty API</h1>
       <hr />
 
+      <FilterSection
+        genderFilter={setGenderFilter}
+        statusFilter={setStatusFilter}
+        filterHandler={filterCharacters}
+      />
       <InfiniteScroll
         dataLength={characters.length}
         next={fetchData}
@@ -43,7 +64,7 @@ function Home() {
           </p>
         }
       >
-        {<CharacterList characterList={characters}/>}
+        {<CharacterList characterList={characters} />}
       </InfiniteScroll>
     </div>
   );

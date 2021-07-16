@@ -1,12 +1,20 @@
 import axios from "axios";
 
-let api_url = 'https://rickandmortyapi.com/api/character';
+const API_URL = "https://rickandmortyapi.com/api/character/";
 
-export const getCharacterList = () => {
-  const data = axios.get(api_url).then((res) => {
-    api_url = res.data.info.next;
-    return res.data.results;
-  });
+export const getCharacterList = ({ currentPage, genderFilter, statusFilter }) => {
+  let pageUrl = `${API_URL}?page=${currentPage}`;
+
+  if (genderFilter) {
+    pageUrl += `&gender=${genderFilter}`;
+  }
+  if (statusFilter) {
+    pageUrl += `&status=${statusFilter}`;
+  }
+
+  const data = axios.get(pageUrl).then((res) => {
+    return res.data;
+  }).catch((err) => null);
+
   return data;
 };
-

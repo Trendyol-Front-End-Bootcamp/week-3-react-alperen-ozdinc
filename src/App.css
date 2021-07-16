@@ -66,4 +66,7 @@ a {
 .character-card a:hover{
   color: rgb(255, 152, 0);
 }
-
+.filter-section{
+  display: flex;
+  justify-content: space-around;
+}
