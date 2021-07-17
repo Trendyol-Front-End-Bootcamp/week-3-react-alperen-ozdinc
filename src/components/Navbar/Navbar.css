@@ -1,0 +1,18 @@
+.app-navbar {
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .app-navbar-list{
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .app-navbar-list> * {
+    font-weight: 700;
+  }
+  .home-icon svg{
+    fill: rgb(51, 51, 51)
+  }

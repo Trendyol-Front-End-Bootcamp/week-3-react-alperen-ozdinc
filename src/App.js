@@ -5,8 +5,8 @@ import {
 } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
 import Home from './pages/Home';
 import CharacterDetail from './pages/CharacterDetail';
 

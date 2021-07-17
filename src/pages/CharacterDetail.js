@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import { getSingleCharacter } from '../services/api-service';
-import SingleCharacter from '../components/characters/SingleCharacter';
+import SingleCharacter from '../components/characters/SingleCharacter/SingleCharacter';
 
 function CharacterDetail() {
     let { id } = useParams();

@@ -1,0 +1,54 @@
+
+.single-character{
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+  }
+
+  .character-image img{
+    border-radius: 50% 20% / 10% 40%;
+  }
+  .character-info{
+    width: 350px;
+  }
+
+  
+.character-details li{
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
+  }
+  .character-property, .character-title {
+    color: rgb(255, 152, 0);
+    font-weight: bold;
+  }
+  .character-title{
+    text-align: center;
+  }
+  .detailed{
+    height: 300px;
+    margin: 0 auto;
+  }
+  .episodes-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .episodes{
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .episode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    color:#000;
+    text-align: center;
+    margin: 2px;
+  }

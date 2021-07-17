@@ -1,0 +1,9 @@
+.filter-section{
+    width: 600px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .filter-section > button {
+    width: 90px;
+  }

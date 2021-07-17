@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { getCharacterList } from "../services/api-service";
-import FilterSection from "../components/filters/FilterSection";
-import CharacterList from "../components/characters/CharacterList";
+import FilterSection from "../components/filters/FilterSection/FilterSection";
+import CharacterList from "../components/characters/CharacterList/CharacterList";
 
 const MAX_NUMBER_OF_CHARACTERS = 100;
 

@@ -1,4 +1,5 @@
-import CharacterCard from './CharacterCard';
+import './CharacterList.css';
+import CharacterCard from '../CharacterCard/CharacterCard';
 
 function CharacterList({ characterList }){
 

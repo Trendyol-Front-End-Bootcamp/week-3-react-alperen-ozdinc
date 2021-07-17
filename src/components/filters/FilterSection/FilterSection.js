@@ -1,5 +1,6 @@
-import GenderFilter from './GenderFilter';
-import StatusFilter from './StatusFilter';
+import './FilterSection.css';
+import GenderFilter from '../GenderFilter';
+import StatusFilter from '../StatusFilter';
 
 function FilterSection({genderFilter, statusFilter, filterHandler}){
     const handleClick = () => {
