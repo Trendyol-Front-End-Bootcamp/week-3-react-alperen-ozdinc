@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🎆✨ Live demo => [https://react-rick-and-morty-app.netlify.app/](https://react-rick-and-morty-app.netlify.app/)
 
 ## Available Scripts
 
