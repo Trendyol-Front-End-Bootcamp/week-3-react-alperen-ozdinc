@@ -1,10 +1,9 @@
 function GenderFilter({ changeHandler }) {
   const handleChange = (e) => {
     changeHandler(e.target.value);
-    console.log(e.target.value);
   };
   return (
-    <div>
+    <div className="filter-select">
       <label htmlFor="gender">Gender:</label>
       <select name="gender" id="gender" onChange={handleChange} >
         <option value="">None</option>

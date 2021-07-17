@@ -2,26 +2,73 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: -apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
 a {
-  color: #fff;
   text-decoration: none;
+}
+ul{
+  list-style-type: none;
+}
+svg{
+  overflow: hidden;
 }
 .text-gray {
   color: rgb(158,158,158);
 }
-
-.header-title{
-  margin: 0px;
-  color: rgb(32, 35, 41);
-  border: none;
-  font-weight: 900;
-  z-index: 1;
-  font-size: 5.625rem;
+.app-navbar {
+  width: 95%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-navbar-list{
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
+.app-navbar-list> * {
+  font-weight: 700;
+}
+.home-icon svg{
+  fill: rgb(51, 51, 51)
+}
+.hero-wrapper {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(50vh - 60px);
   text-align: center;
-  margin-bottom: 50px;
+  position: relative;
+}
+.app-hero {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  z-index: -1;
+}
+.app-hero svg{
+  fill: rgb(245, 245, 245);
+  transform: scale(0.8);
+  padding-bottom: 30px;
 }
 
+.hero-title{
+  margin: 0px;
+    color: rgb(32, 35, 41);
+    border: none;
+    font-weight: 900;
+    z-index: 1;
+    font-size: 3.125rem;
+}
+.app-main{
+  background: rgb(36, 40, 47);
+  padding-top: 30px;
+}
 .character-list{
   display: flex;
   -webkit-box-pack: center;
@@ -67,6 +114,66 @@ a {
   color: rgb(255, 152, 0);
 }
 .filter-section{
+  width: 600px;
+  margin: 0 auto 20px auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.filter-section > button {
+  width: 90px;
+}
+.detailed{
+  height: 300px;
+  margin: 0 auto;
+}
+.episodes-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.episodes{
+  display:flex;
+  flex-wrap: wrap;
+}
+.episode{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  color:#000;
+  text-align: center;
+  margin: 2px;
+}
+
+.filter-select{
+  display: flex;
+}
+label{
+  color:#fff;
+  margin-right: 10px;
+}
+select{
+  width: 150px;
+}
+.status {
+  height: 0.5rem;
+  width: 0.5rem;
+  margin-right: 0.375rem;
+  border-radius: 50%;
+}
+.unknown{
+  background: rgb(158, 158, 158)
+}
+.alive {
+  background: rgb(85, 204, 68);
+}
+.dead {
+  background: rgb(214, 61, 46);
+}
+.character-status {
+  display: flex;
+  align-items: center;
 }

@@ -18,3 +18,11 @@ export const getCharacterList = ({ currentPage, genderFilter, statusFilter }) =>
 
   return data;
 };
+
+export const getSingleCharacter = (id) => {
+  let characterURL = `${API_URL+id}`;
+  const data = axios.get(characterURL).then((res)=>{
+    return res.data;
+  })
+  return data;
+}

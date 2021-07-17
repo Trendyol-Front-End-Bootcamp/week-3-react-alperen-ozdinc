@@ -5,7 +5,7 @@ function StatusFilter({changeHandler}){
         console.log(e.target.value);
       };
     return (
-        <div >
+        <div className="filter-select">
             <label htmlFor="status">Status:</label>
             <select name="status" id="status" onChange={handleChange}>
                 <option value="">None</option>

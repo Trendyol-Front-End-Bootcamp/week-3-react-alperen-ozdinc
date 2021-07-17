@@ -35,7 +35,7 @@ function Home() {
     setHasMore(true);
     setCurrentPage(1);
   };
-  
+
   useEffect(() => {
     if (currentPage === 1) {
       setCharacters([]);
@@ -44,10 +44,7 @@ function Home() {
   }, [currentPage]);
 
   return (
-    <div className="App">
-      <h1 className="header-title">The Rick and Morty API</h1>
-      <hr />
-
+    <main className="app-main">
       <FilterSection
         genderFilter={setGenderFilter}
         statusFilter={setStatusFilter}
@@ -66,7 +63,7 @@ function Home() {
       >
         {<CharacterList characterList={characters} />}
       </InfiniteScroll>
-    </div>
+    </main>
   );
 }
 
